@@ -26,11 +26,11 @@ if os.path.isfile("%s/VExpress.pth" % (site_packages_root)):
 
 
 
-from huggingface_hub import snapshot_download
-if not os.path.isfile(os.path.join(now_dir,"model_ckpts","v-express","v_kps_guider.pth")):
-    snapshot_download(repo_id="tk93/V-Express",local_dir=now_dir,allow_patterns=["*.onnx", "*.json","*.pth","*.bin"])
-else:
-    print("V-Express use cache models,make sure your 'model_ckpts' complete")
+# from huggingface_hub import snapshot_download
+# if not os.path.isfile(os.path.join(now_dir,"model_ckpts","v-express","v_kps_guider.pth")):
+#     snapshot_download(repo_id="tk93/V-Express",local_dir=now_dir,allow_patterns=["*.onnx", "*.json","*.pth","*.bin"])
+# else:
+#     print("V-Express use cache models,make sure your 'model_ckpts' complete")
 
 from .nodes import LoadVideo,PreViewVideo,VExpress,LoadImagePath, LoadAudioPath
 WEB_DIRECTORY = "./web"

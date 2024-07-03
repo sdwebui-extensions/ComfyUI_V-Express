@@ -11,7 +11,9 @@ input_path = folder_paths.get_input_directory()
 out_path = folder_paths.get_output_directory()
 
 now_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(now_dir, "model_ckpts")
+model_path = os.path.join(folder_paths.models_dir, "V-Express")
+if os.path.exists("/stable-diffusion-cache/models/V-Express/model_ckpts"):
+    model_path = "/stable-diffusion-cache/models/V-Express/model_ckpts"
 unet_config_path = os.path.join(model_path,"stable-diffusion-v1-5","unet","config.json")
 vae_path = os.path.join(model_path,"sd-vae-ft-mse")
 audio_encoder_path = os.path.join(model_path,"wav2vec2-base-960h")
