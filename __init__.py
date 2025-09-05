@@ -37,18 +37,18 @@ WEB_DIRECTORY = "./web"
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
 NODE_CLASS_MAPPINGS = {
-    "LoadAudioPath": LoadAudioPath,
-    "LoadVideo": LoadVideo,
-    "PreViewVideo": PreViewVideo,
-    "VExpress": VExpress,
-    "LoadImagePath": LoadImagePath
+    "V_ExpressLoadAudioPath": LoadAudioPath,
+    "V_ExpressLoadVideo": LoadVideo,
+    "V_ExpressPreViewVideo": PreViewVideo,
+    "V_ExpressVExpress": VExpress,
+    "V_ExpressLoadImagePath": LoadImagePath
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "VExpress": "VExpress Node",
-    "LoadVideo": "Video Loader",
-    "PreViewVideo": "PreView Video",
-    "LoadImagePath": "LoadImagePath",
-    "LoadAudioPath": "LoadAudioPath"
+    "V_ExpressVExpress": "VExpress Node",
+    "V_ExpressLoadVideo": "Video Loader",
+    "V_ExpressPreViewVideo": "PreView Video",
+    "V_ExpressLoadImagePath": "LoadImagePath",
+    "V_ExpressLoadAudioPath": "LoadAudioPath"
 }

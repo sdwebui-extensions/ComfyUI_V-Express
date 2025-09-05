@@ -12,15 +12,15 @@ function previewAudio(node,file){
         node.widgets.pop();
     }
     try {
-        var el = document.getElementById("uploadAudio");
+        var el = document.getElementById("V_ExpressuploadAudio");
         el.remove();
     } catch (error) {
         console.log(error);
     }
     var element = document.createElement("div");
-    element.id = "uploadAudio";
+    element.id = "V_ExpressuploadAudio";
     const previewNode = node;
-    var previewWidget = node.addDOMWidget("audiopreview", "preview", element, {
+    var previewWidget = node.addDOMWidget("V_Expressaudiopreview", "preview", element, {
         serialize: false,
         hideOnZoom: false,
         getValue() {
@@ -190,13 +190,13 @@ function audioUpload(node, inputName, inputData, app) {
     return { widget: uploadWidget };
 }
 
-ComfyWidgets.AUDIOPLOAD = audioUpload;
+ComfyWidgets.V_ExpressAUDIOPLOAD = audioUpload;
 
 app.registerExtension({
-	name: "VExpress.UploadAudio",
+	name: "VExpress.V_ExpressUploadAudio",
 	async beforeRegisterNodeDef(nodeType, nodeData, app) {
-		if (nodeData?.name == "LoadAudioPath") {
-			nodeData.input.required.upload = ["AUDIOPLOAD"];
+		if (nodeData?.name == "V_ExpressLoadAudioPath") {
+			nodeData.input.required.upload = ["V_ExpressAUDIOPLOAD"];
 		}
 	},
 });

@@ -12,15 +12,15 @@ function previewVideo(node,file){
         node.widgets.pop()
     }
     try {
-        var el = document.getElementById("uploadVideo");
+        var el = document.getElementById("V_ExpressuploadVideo");
         el.remove();
     } catch (error) {
         console.log(error);
     }
     var element = document.createElement("div");
-    element.id = "uploadVideo";
+    element.id = "V_ExpressuploadVideo";
     const previewNode = node;
-    var previewWidget = node.addDOMWidget("videopreview", "preview", element, {
+    var previewWidget = node.addDOMWidget("V_Expressvideopreview", "preview", element, {
         serialize: false,
         hideOnZoom: false,
         getValue() {
@@ -190,13 +190,13 @@ function videoUpload(node, inputName, inputData, app) {
     return { widget: uploadWidget };
 }
 
-ComfyWidgets.VIDEOPLOAD = videoUpload;
+ComfyWidgets.V_ExpressVIDEOPLOAD = videoUpload;
 
 app.registerExtension({
-	name: "V-Express.UploadVideo",
+	name: "V-Express.V_ExpressUploadVideo",
 	async beforeRegisterNodeDef(nodeType, nodeData, app) {
-		if (nodeData?.name == "LoadVideo") {
-			nodeData.input.required.upload = ["VIDEOPLOAD"];
+		if (nodeData?.name == "V_ExpressLoadVideo") {
+			nodeData.input.required.upload = ["V_ExpressVIDEOPLOAD"];
 		}
 	},
 });

@@ -30,7 +30,7 @@ function addPreviewOptions(nodeType) {
         // less generalization of chainCallback
         let optNew = []
         try {
-            const previewWidget = this.widgets.find((w) => w.name === "videopreview");
+            const previewWidget = this.widgets.find((w) => w.name === "V_Expressvideopreview");
 
             let url = null
             if (previewWidget.videoEl?.hidden == false && previewWidget.videoEl.src) {
@@ -73,7 +73,7 @@ function addPreviewOptions(nodeType) {
 function previewVideo(node,file,type){
     var element = document.createElement("div");
     const previewNode = node;
-    var previewWidget = node.addDOMWidget("videopreview", "preview", element, {
+    var previewWidget = node.addDOMWidget("V_Expressvideopreview", "preview", element, {
         serialize: false,
         hideOnZoom: false,
         getValue() {
@@ -143,9 +143,9 @@ function previewVideo(node,file,type){
 }
 
 app.registerExtension({
-	name: "V-Express.VideoPreviewer",
+	name: "V-Express.V_ExpressVideoPreviewer",
 	async beforeRegisterNodeDef(nodeType, nodeData, app) {
-		if (nodeData?.name == "PreViewVideo") {
+		if (nodeData?.name == "V_ExpressPreViewVideo") {
 			nodeType.prototype.onExecuted = function (data) {
 				previewVideo(this, data.video[0], data.video[1]);
 			}
